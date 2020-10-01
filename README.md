@@ -15,12 +15,13 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/juanbelieni/bookeep">
   </a>
 
-  <a href="https://bookeep.netlify.app">
-    <img alt="GitHub last commit" src="https://img.shields.io/badge/Demo-bookeep.netlify.app-0e76a8">
+  <a href="https://bookeep.vercel.app">
+    <img alt="GitHub last commit" src="https://img.shields.io/badge/Demo-bookeep.vercel.app-0e76a8">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/juanbelieni/bookeep/stargazers">
+
+  <a href="https://github.com/juanbelieni/bookeep/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/juanbelieni/bookeep?style=social">
   </a>
 </p>

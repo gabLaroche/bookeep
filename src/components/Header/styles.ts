@@ -17,8 +17,15 @@ export const HeaderContainer = styled.header`
       margin-left: 7px;
     }
   }
+  
+  .header-nav {
+    display: flex;
+    .header-link:nth-child(2) {
+      margin-left: 15px;
+    }
+  }
 
-  #header-link {
+  #header-link, .header-link {
     display: flex;
     align-items: center;
     color: ${(props) => props.theme.primary};

@@ -1,12 +1,13 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import { AiFillHeart, AiOutlineSearch, AiOutlineHeart } from 'react-icons/ai';
+import { AiFillHeart, AiOutlineSearch } from 'react-icons/ai';
 import { DebounceInput } from 'react-debounce-input';
 import createPersistedSate from 'use-persisted-state';
 import Loading from 'react-loading';
 import { useTheme } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { Container, SearchBar, Volume } from './styles';
+import Volume from '../../components/Volume';
+import { Container, SearchBar } from './styles';
 import Header from 'components/Header';
 import bookApi from 'services/bookApi';
 
@@ -82,33 +83,12 @@ const Search = () => {
         </div>
       ) : (
         volumes.map((volume) => (
-          <Volume key={volume.id}>
-            <img
-              src={
-                volume.image ||
-                'https://booksforphysicists.com/static/cover-not-available.f94fb02e99a0.png'
-              }
-              alt="volume"
-            />
-            <div className="volume-info">
-              <div className="volume-header">
-                <h1>{volume.title}</h1>
-                {favoriteVolumes.includes(volume.id) ? (
-                  <AiFillHeart
-                    size={25}
-                    onClick={() => handleFavoriteVolume(volume.id)}
-                  />
-                ) : (
-                  <AiOutlineHeart
-                    size={25}
-                    onClick={() => handleFavoriteVolume(volume.id)}
-                  />
-                )}
-              </div>
-              <h2>{volume.authors}</h2>
-              <p>{volume.description}</p>
-            </div>
-          </Volume>
+          <Volume
+            key={volume.id}
+            volume={volume}
+            favoriteVolumes={favoriteVolumes}
+            handleFavoriteVolume={handleFavoriteVolume}
+          />
         ))
       )}
     </Container>
